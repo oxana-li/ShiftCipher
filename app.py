@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from project import encode, detect
+from main import encode, detect
 
 sg.theme('black')
 
