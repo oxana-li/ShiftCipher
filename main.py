@@ -1,4 +1,7 @@
 import string
+letters = list("abcdefghijklmnopqrstuvwxyz")
+numbers = list("0123456789")
+punctuation = list(string.punctuation)
 
 def detect(character, _list, key):
     index = _list.index(character)
@@ -12,9 +15,6 @@ def detect(character, _list, key):
 
 def encode(message, key):
     message_result = ""
-    letters = list("abcdefghijklmnopqrstuvwxyz")
-    numbers = list("0123456789")
-    punctuation = list(string.punctuation)
     
     for i in message: # checks every character in the message
         if i.isupper():
@@ -33,9 +33,6 @@ def encode(message, key):
 def decode(message, neg_key):
     key = -abs(neg_key)
     message_result = ""
-    letters = list("abcdefghijklmnopqrstuvwxyz")
-    numbers = list("0123456789")
-    punctuation = list(string.punctuation)
     
     for i in message: # checks every character in the message
         if i.isupper():
