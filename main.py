@@ -29,3 +29,29 @@ def encode(message, key):
             message_result += detect(i, punctuation, key)
 
     return message_result
+
+def decode(message, neg_key):
+    key = -abs(neg_key)
+    message_result = ""
+    letters = list("abcdefghijklmnopqrstuvwxyz")
+    numbers = list("0123456789")
+    punctuation = list(string.punctuation)
+    
+    for i in message: # checks every character in the message
+        if i.isupper():
+            message_result += detect(i.lower(), letters, key).upper()
+        elif i in letters:
+            message_result += detect(i, letters, key)
+        elif i in numbers:
+            message_result += detect(i, numbers, key)
+        elif i == " ":
+            message_result += " "
+        else:
+            message_result += detect(i, punctuation, key)
+
+    return message_result
+
+print(encode("Hello, World!", 3))
+print(decode("Khoor/ Zruog$", 3))
+
+
